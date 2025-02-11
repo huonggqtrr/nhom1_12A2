@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Menu dưới navbar */
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 20px 0;
+            margin-top: 0px;
+            z-index: 90;
+            position: relative;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: gold;
+            font-size: 18px;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+        /* Container cho phần slider */
+        .container {
+            position: relative; /* Ensure positioning for buttons */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            padding: 0;
+            background-color: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+            overflow: hidden;
+        }
+
+        /* Phần slider */
+        #slide {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .item.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            width: auto;
+        }
+
+        .content .name {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content .des {
+            font-size: 20px;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: left;
+            width: 500px;
+            margin-top: 10px;
+            z-index: 10;
+        }
+
+        .content button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            background-color: #FFD700;
+            color: black;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .content button:hover {
+            background-color: #e6c200;
+        }
+
+       /* Nút Previous và Next */
+.buttons {
+    position: absolute;
+    bottom: 20px; /* Đặt nút ở dưới */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    text-align: center;
+    z-index: 1000; /* Đảm bảo các nút ở trên cùng */
+}
+
+.buttons-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* Add spacing between buttons */
+}
+
+.buttons-button:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Menu ở góc trên -->
+    <div class="navbar-menu">
+        <a href="indexnhap.html">Trang Chủ</a>
+        <a href="nhap1.html">Món ăn và công thức</a>
+        <a href="https://www.bachhoaxanh.com/?srsltid=AfmBOooYZ9J87olkBgiGIAeDmkvbpUggEBdBZAarP3FaBay6aI_UlJph">Mua Hàng</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </div>
+
+    <!-- Container chứa slider -->
+    <div class="container">
+        <div id="slide">
+            <!-- Slider Items -->
+            <div class="item active" style="background-image: url('images/keodua.jpg');">
+                <div class="content">
+                    <div class="name">Kẹo Dừa</div>
+                    <div class="des">
+                        Kẹo dừa là món đặc sản nổi tiếng của miền Tây, được làm từ dừa tươi, sữa đặc và đường. Món kẹo có vị ngọt, béo, dẻo và giòn tan, với hương dừa thơm ngon đặc trưng. Kẹo dừa thường được cắt thành miếng nhỏ, là món quà quê giản dị nhưng đầy ấn tượng, rất được ưa chuộng và làm quà tặng khi đến miền Tây.
+                    </div>
+                    <button><a href="congthuc.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+<!-- Slider Items -->
+            <div class="item" style="background-image: url('images/chuoidap1.jpg');">
+                <div class="content">
+                    <div class="name">Chuối Đập</div>
+                    <div class="des">Chuối đập là món ăn dân dã miền Tây, đặc biệt ở Bến Tre. Chuối xiêm vừa chín tới được đập dẹt, nướng vàng trên bếp than, rồi chan nước cốt dừa béo ngậy. Vị ngọt thơm của chuối kết hợp với nước cốt dừa tạo nên hương vị khó quên.
+                    </div>
+                    <button><a href="congthuc1.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('images/comdua.jpg');">
+                <div class="content">
+                    <div class="name">Cơm Dừa</div>
+                    <div class="des">Cơm dừa là một món ăn đặc sản của miền Tây Nam Bộ, đặc biệt phổ biến trong các dịp lễ hội hoặc khi du khách ghé thăm vùng đất này. Món ăn này được chế biến từ cơm nếp thơm dẻo kết hợp với nước cốt dừa béo ngậy, mang lại hương vị đậm đà, ngọt béo đặc trưng.</div>
+                    <button><a href="congthuc2.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('images/banhxeo.jpg');">
+                <div class="content">
+                    <div class="name">Bánh Xèo Ốc Gạo</div>
+                    <div class="des">Bánh xèo là một món ăn đặc trưng của ẩm thực miền Nam Việt Nam, nổi bật với lớp vỏ giòn rụm bên ngoài và phần nhân thơm ngon, hấp dẫn bên trong. Món bánh xèo có màu vàng ươm, kích thích vị giác ngay từ cái nhìn đầu tiên và được rất nhiều người yêu thích.</div>
+                    <button><a href="congthuc3.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('images/goicuhudua.jpg');">
+                <div class="content">
+                    <div class="name">Gỏi Củ Hủ Dừa</div>
+                    <div class="des">Gỏi củ hủ dừa là một món ăn đặc sản của miền Tây Nam Bộ, đặc biệt là ở các vùng có nhiều dừa như Bến Tre. Món gỏi này không chỉ hấp dẫn bởi vị ngon lạ mà còn vì sự kết hợp độc đáo giữa các nguyên liệu tươi ngon, mang đậm hương vị miền quê.</div>
+                    <button><a href="congthuc4.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url('images/calocnuongtrui.jpg');">
+                <div class="content">
+                    <div class="name">Cá Lóc Nướng</div>
+                    <div class="des">Cá lóc nướng là một món ăn đặc sản của miền Tây Nam Bộ, nổi bật với hương vị thơm ngon, độc đáo, được chế biến từ cá lóc (còn gọi là cá chuối). Món ăn này không chỉ hấp dẫn bởi sự đơn giản trong cách chế biến mà còn vì sự kết hợp giữa cá tươi ngon với gia vị, tạo nên một món ăn vừa dân dã, vừa đậm đà hương vị đặc trưng của miền sông nước.</div>
+                    <button><a href="congthuc5.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+                      <div class="item" style="background-image: url('images/cabongkho.jpg');">
+                <div class="content">
+                    <div class="name">Cá Bống Kho Nước Dừa</div>
+                    <div class="des">Cá bống kho nước dừa là món ăn dân dã miền Tây với hương vị đậm đà khó quên. Cá bống được ướp gia vị như nước mắm, tiêu, hành tỏi, rồi kho cùng nước dừa tươi. Nước dừa giúp cá thấm vị, thịt săn chắc, thơm ngon, và tạo màu vàng óng đẹp mắt. Món này thường có vị mặn ngọt hài hòa, béo ngậy, rất hợp khi ăn cùng cơm trắng nóng hổi.</div>
+                    <button><a href="congthuc6.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+                    <div class="item" style="background-image: url('images/canhchuaca.jpg');">
+                <div class="content">
+                    <div class="name">Canh Chua Cá Linh Bông So Đũa</div>
+                    <div class="des">Canh chua cá linh bông so đũa là món ăn đặc trưng miền Tây, thường nấu vào mùa nước nổi. Cá linh tươi, ngọt thịt, được nấu cùng nước me tạo vị chua thanh. Bông so đũa trắng mềm, hơi nhẫn nhẹ, hòa quyện với vị ngọt của cá, cùng các nguyên liệu như cà chua, đậu bắp, giá và rau thơm. Món canh có hương vị chua ngọt hài hòa, thanh mát, thường ăn kèm cơm trắng hoặc bún, rất dân dã và thơm ngon.
+
+                   </div>
+                    <button><a href="congthuc7.html" style="color: black; text-decoration: none;">Xem công thức</a></button>
+                </div>
+            </div>
+                    <div class="item" style="background-image: url('images/banhcanhne.jpg');">
+                <div class="content">
+                    <div class="name">Bánh Canh Bột Sắt</div>
+                    <div class="des">Bánh canh bột sắt là món ăn dân dã miền Tây với sợi bánh dai mềm, được làm thủ công từ bột gạo và bột năng, ép qua khuôn tạo hình. Nước dùng ngọt thanh, thường nấu từ xương, thịt hoặc tôm cua. Khi ăn, bánh canh được rắc hành, tiêu, ăn nóng, mang hương vị đậm đà, gần gũi quê nhà.
+                    </div>
+                    <button><a href="congthuc8.html" style="color: black; text-decoration: none;">Xem công thức </a></button>
+                </div>
+            </div>
+        </div>
+ <div class="buttons">
+        <!-- Nút Previous -->
+        <button id="prev" class="buttons-button"><i class="fas fa-chevron-left"></i></button>
+        <!-- Nút Next -->
+        <button id="next" class="buttons-button"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        document.getElementById('next').onclick = function() {
+            currentIndex = (currentIndex + 1) % items.length; // Chuyển tới ảnh kế tiếp
+            showSlide(currentIndex);
+        };
+
+        document.getElementById('prev').onclick = function() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length; // Quay lại ảnh trước
+            showSlide(currentIndex);
+        };
+    </script>
+</body>
+</html>

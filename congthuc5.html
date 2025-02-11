@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công Thức Cá Lóc Nướng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: black;
+        }
+
+        .header {
+            background-color: #ffc107;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 15px 0;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: gold;
+            font-size: 18px;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+        .recipe-content {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .recipe-left {
+            width: 60%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .recipe-left h2 {
+            color: #333;
+        }
+
+        .recipe-left img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #ffc107;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        .comments, .share-recipe {
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .comments textarea, .share-recipe textarea, .share-recipe input[type="text"] {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        .comments button, .share-recipe button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .comments button:hover, .share-recipe button:hover {
+            background-color: #e0a806;
+        }
+         .shared-recipes ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+       .shared-recipes ul li {
+    background-color: #fff7e6;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.shared-recipes ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+        .shared-recipes ul li h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .shared-recipes ul li p {
+            margin: 0;
+            color: #555;
+        }
+
+        .star-rating i {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating i.active,
+        .star-rating i:hover,
+        .star-rating i:hover ~ i {
+            color: gold;
+        }
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ .right-section iframe {
+    width: 100%;
+    height: 400px; /* Đặt chiều cao cố định lớn hơn */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Menu dưới navbar -->
+    <div class="navbar-menu">
+        <a href="indexnhap.html">Trang Chủ</a>
+        <a href="nhap1.html">Món Ăn Và Công Thức</a>
+        <a href="https://www.bachhoaxanh.com/?srsltid=AfmBOooYZ9J87olkBgiGIAeDmkvbpUggEBdBZAarP3FaBay6aI_UlJph">Mua Hàng</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </div>
+    <!-- Header -->
+    <div class="header">
+        <h1>Cá Lóc Nướng</h1>
+    </div>
+
+    <!-- Recipe content -->
+    <div class="recipe-content">
+        <!-- Recipe Left: Ingredients and Instructions -->
+        <div class="recipe-left">
+            <img src="images/calocnuong1.jpg" alt="Hình ảnh cá lóc nướng" />
+            <h2>Nguyên Liệu:</h2>
+            <ul>
+                <li>1 con cá lóc (khoảng 1.5kg)</li>
+                <li>50g mỡ hành</li>
+                <li>200g rau sống (xà lách, diếp cá, tía tô)</li>
+                <li>1 củ hành tím</li>
+                <li>2 quả ớt</li>
+                <li>1 trái dưa leo</li>
+                <li>50g bánh tráng</li>
+                <li>Gia vị: muối, tiêu, nước mắm, đường</li>
+            </ul>
+
+            <h2>Cách Làm:</h2>
+            <ul>
+                <li><b>Bước 1:</b> Làm sạch cá lóc, để nguyên con, khứa vài đường trên thân để thấm gia vị.</li>
+                <li><b>Bước 2:</b> Ướp cá với muối, tiêu và hành tím băm nhỏ trong 30 phút.</li>
+                <li><b>Bước 3:</b> Nướng cá trên than hoa hoặc lò nướng ở 200°C trong khoảng 25-30 phút, đến khi da cá vàng giòn.</li>
+                <li><b>Bước 4:</b> Làm mỡ hành: đun nóng dầu ăn, cho hành lá thái nhỏ vào và trộn đều.</li>
+                <li><b>Bước 5:</b> Dọn cá ra đĩa, quết mỡ hành lên thân cá. Ăn kèm với bánh tráng, rau sống và nước mắm chua ngọt.</li>
+            </ul>
+
+            <div class="right-section">
+                <h2>Video Hướng Dẫn:</h2>
+              <iframe src="https://www.youtube.com/embed/4KIg5Pjq_1E?si=d1vTrQRiqdxeTDs-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+     <!-- Bình luận -->
+    <div class="comments">
+        <h2>Gửi phản hồi của bạn:</h2>
+        <textarea id="comment" placeholder="Viết bình luận của bạn tại đây..."></textarea>
+        <div class="star-rating">
+            <i class="fa fa-star" data-value="1"></i>
+            <i class="fa fa-star" data-value="2"></i>
+            <i class="fa fa-star" data-value="3"></i>
+            <i class="fa fa-star" data-value="4"></i>
+            <i class="fa fa-star" data-value="5"></i>
+        </div>
+        <button id="submit-comment">Gửi</button>
+        <div class="feedback-list" id="feedback-container"></div>
+    </div>
+
+    <!-- Chia sẻ công thức -->
+    <div class="share-recipe">
+        <h2>Chia Sẻ Công Thức Của Bạn</h2>
+        <form id="share-recipe-form">
+            <input type="text" id="recipe-name" placeholder="Tên món ăn...">
+            <textarea id="recipe-details" placeholder="Viết công thức của bạn tại đây..."></textarea>
+            <button type="submit">Chia Sẻ</button>
+        </form>
+    </div>
+
+    <!-- Công thức được chia sẻ -->
+    <div class="shared-recipes">
+        <h2>Công Thức Được Chia Sẻ</h2>
+        <ul id="shared-recipes-list"></ul>
+    </div>
+    <script>
+        // Chia sẻ công thức
+        document.getElementById('share-recipe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('recipe-name').value;
+            const details = document.getElementById('recipe-details').value;
+            if (name && details) {
+                const li = document.createElement('li');
+                li.innerHTML = `<h3>${name}</h3><p>${details}</p>`;
+                document.getElementById('shared-recipes-list').appendChild(li);
+                document.getElementById('recipe-name').value = '';
+                document.getElementById('recipe-details').value = '';
+                alert('Công thức đã được chia sẻ!');
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin.');
+            }
+        });
+
+        // Bình luận
+        let selectedRating = 0;
+        document.querySelectorAll('.star-rating i').forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = this.getAttribute('data-value');
+                document.querySelectorAll('.star-rating i').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                let prev = this.previousElementSibling;
+                while (prev) {
+                    prev.classList.add('active');
+                    prev = prev.previousElementSibling;
+                }
+            });
+        });
+
+        document.getElementById('submit-comment').addEventListener('click', function() {
+            const comment = document.getElementById('comment').value.trim();
+            if (!comment || selectedRating === 0) {
+                alert('Vui lòng nhập bình luận và chọn đánh giá sao!');
+                return;
+            }
+            const feedback = document.createElement('div');
+            feedback.innerHTML = `<p>"${comment}"</p><span>Đánh giá: ${selectedRating} sao - Người dùng ẩn danh</span>`;
+            document.getElementById('feedback-container').prepend(feedback);
+            document.getElementById('comment').value = '';
+            document.querySelectorAll('.star-rating i').forEach(s => s.classList.remove('active'));
+            selectedRating = 0;
+        });
+        // Xử lý gửi công thức chia sẻ
+const shareForm = document.getElementById('share-recipe-form');
+const sharedRecipesList = document.getElementById('shared-recipes-list');
+
+shareForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Lấy dữ liệu từ form
+    const recipeName = document.getElementById('recipe-name').value.trim();
+    const recipeDetails = document.getElementById('recipe-details').value.trim();
+
+    if (recipeName && recipeDetails) {
+        // Tạo phần tử công thức mới
+        const newRecipe = document.createElement('li');
+        newRecipe.innerHTML = `
+            <h3>${recipeName}</h3>
+            <p>${recipeDetails}</p>
+        `;
+
+        // Thêm công thức mới vào danh sách hiển thị
+        sharedRecipesList.prepend(newRecipe);
+
+        // Reset form
+        document.getElementById('recipe-name').value = '';
+        document.getElementById('recipe-details').value = '';
+
+        // Hiển thị thông báo
+        alert('Công thức của bạn đã được chia sẻ thành công!');
+    } else {
+        alert('Vui lòng điền đầy đủ thông tin trước khi chia sẻ.');
+    }
+});
+
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Công Thức Cá Lóc Nuớng</p>
+    </footer>
+</body>
+</html>

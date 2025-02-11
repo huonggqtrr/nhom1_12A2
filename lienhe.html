@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1, 
+        .contact-form h2, 
+        .contact-info p a, 
+        .contact-form button, 
+        .contact-form button:hover {
+            color: #ffc107; /* Đổi màu chữ thành vàng */
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #ffc107; /* Đổi màu tiêu đề trong form thành vàng */
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #ffc107; /* Đổi nền nút thành vàng */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #e0a800; /* Màu nền khi hover vẫn giữ là màu vàng đậm hơn */
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            color: #ffc107; /* Đổi màu số điện thoại và email sang vàng */
+        }
+
+        .contact-info a {
+            color: #ffc107; /* Đổi màu liên kết email thành vàng */
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #ffc107;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .payment-partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.payment-partners img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+/* Footer container adjustment */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Align sections to the left and right */
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Adjust the layout of the payment partners */
+.payment-partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start; /* Align images to the left */
+}
+
+.payment-partners img {
+    width: 60px; /* Resize images to be smaller */
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px; /* Space between rows */
+}
+
+/* Bottom footer section */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Footer section - Align "Theo dõi chúng tôi trên" to the left */
+.footer-section {
+    flex: 1;
+    margin-right: 20px; /* Space between sections */
+    text-align: left; /* Align the text to the left */
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left; /* Align the heading to the left */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Space between icons */
+    justify-content: flex-start; /* Align icons to the left */
+}
+
+.footer-section ul li a {
+    color: black; /* Icon color */
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffc107; /* Hover effect */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.footer-section ul li a {
+    color: black;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffc107;
+}
+
+       /* Menu dưới navbar */
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding: 30px 0;
+   margin-top: 0px; /* Hoặc thử giá trị lớn hơn nếu vẫn bị che */
+    z-index: 90;
+    position: relative;
+}
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: #ffc107; /* Đổi màu link menu thành vàng */
+            font-size: 18px;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Menu dưới navbar -->
+    <div class="navbar-menu">
+        <a href="indexnhap.html">Trang Chủ</a>
+        <a href="nhap1.html">Món Ăn Và Công Thức</a>
+        <a href="https://www.bachhoaxanh.com/?srsltid=AfmBOooYZ9J87olkBgiGIAeDmkvbpUggEBdBZAarP3FaBay6aI_UlJph">Mua Hàng</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </div>
+    <header>
+        <h1>Liên Hệ Với Chúng Tôi</h1>
+    </header>
+
+    <div class="container">
+        <div class="contact-form">
+            <h2>Gửi Thông Tin Liên Hệ</h2>
+          <form action="send_email.php" method="post">
+
+                <label for="name">Họ và Tên</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+
+                <label for="message">Viết lời nhắn</label>
+                <textarea id="message" name="message" rows="5" placeholder="Nhập lời nhắn của bạn" required></textarea>
+
+                <button type="submit">Gửi Ý Kiến</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Thông Tin Liên Hệ</h2>
+            <p>Địa chỉ: Khu phố 1, Thị Trấn Ba Tri, huyện Ba Tri, Tỉnh Bến Tre</p>
+            <p>Hỗ trợ: <a href="tel:0346532027">0346532027</a></p>
+            <p>Email: <a href="mailto:meomeolocklock@gmail.com">support@.com</a></p>
+        </div>
+    </div>
+    <footer>
+    <div class="footer-container">
+        
+       <div class="footer-section">
+    <h3>Theo dõi chúng tôi trên</h3>
+    <ul>
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+        <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a></li>
+    </ul>
+</div>
+
+    <div class="footer-container">
+        <!-- Các phần khác của footer -->
+
+        <div class="footer-section">
+            <h3>Đối tác thanh toán</h3>
+            <div class="payment-partners">
+                <img src="images/mb.jpg" alt="MB">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_(2018).svg" alt="American Express">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/MoMo_Logo.png" alt="MoMo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Vietcombank_logo.svg" alt="Vietcombank">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Công ty của bạn. Tất cả các quyền được bảo lưu.</p>
+    </div>
+</footer>
+    <script>
+        <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Lấy dữ liệu từ form
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+
+    // Email người nhận
+    $to = "meomeolocklock@gmail.com"; // Thay bằng email của bạn
+    $subject = "Liên hệ từ: $name";
+    $body = "Bạn có một liên hệ mới:\n\n".
+            "Họ và Tên: $name\n".
+            "Email: $email\n\n".
+            "Lời nhắn:\n$message";
+
+    // Headers
+    $headers = "From: $email";
+
+    // Gửi email
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể!";
+    } else {
+        echo "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại sau!";
+    }
+}
+?>
+</script>
+</body>
+</html>

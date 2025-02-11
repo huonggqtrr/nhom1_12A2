@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ẩm Thực Bến Tre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column; /* Đổi thành flex-direction column để menu nằm ngang, nội dung dưới */
+            height: 100vh;
+        }
+
+       nav.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background-color: #444;
+}
+
+nav.menu .logo {
+    margin-right: 20px; /* Giãn cách giữa logo và menu */
+}
+
+nav.menu .logo img {
+    max-width: 80px; /* Logo nhỏ gọn */
+    height: auto;
+}
+        /* Menu dưới navbar, chuyển thành ngang */
+        .navbar-menu {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 30px 0;
+            margin-top: 100px; /* Để tránh bị che bởi navbar */
+            z-index: 90;
+            position: relative;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: gold;
+            font-size: 18px;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+        /* Bố cục phần chính (nội dung + video) */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 80px; /* Để tránh bị che bởi navbar */
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 50%; /* Phần nội dung chính chiếm 50% */
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .right-section {
+            width: 50%; /* Video nằm bên phải */
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .right-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .left-section h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .left-section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .left-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .left-section ul li {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #ffc107;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+             body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+    
+       /* Menu dưới navbar */
+.navbar-menu {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding:30px 0;
+  margin-top: 0px;
+    z-index: 90;
+    position: relative;
+}
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: gold;
+            font-size: 18px;
+            margin: 0 20px;
+            transition: 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: white;
+        }
+
+/* Nội dung trang, tránh bị navbar che */
+.container {
+    text-align: center;
+    padding-top: 140px; /* Đẩy nội dung xuống để không bị navbar che */
+    padding: 20px;
+}
+
+        .title {
+            font-size: 36px;
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        .food-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .food-item {
+            background: white;
+            border: 2px solid gold;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .food-item:hover {
+            transform: scale(1.1);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .food-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            background-color: gold;
+            padding: 5px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* Login form */
+        .login-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: darkgoldenrod;
+        }
+            footer {
+            background-color: #ffc107;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .payment-partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.payment-partners img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+/* Footer container adjustment */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Align sections to the left and right */
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Adjust the layout of the payment partners */
+.payment-partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start; /* Align images to the left */
+}
+
+.payment-partners img {
+    width: 60px; /* Resize images to be smaller */
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px; /* Space between rows */
+}
+
+/* Bottom footer section */
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Footer section - Align "Theo dõi chúng tôi trên" to the left */
+.footer-section {
+    flex: 1;
+    margin-right: 20px; /* Space between sections */
+    text-align: left; /* Align the text to the left */
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left; /* Align the heading to the left */
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Space between icons */
+    justify-content: flex-start; /* Align icons to the left */
+}
+
+.footer-section ul li a {
+    color: black; /* Icon color */
+    font-size: 24px; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffc107; /* Hover effect */
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .payment-partners {
+        justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: 100%;
+    }
+
+    .food-item {
+        width: 100%;
+    }
+
+    .navbar-menu {
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+}
+.right-section iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Tỷ lệ chuẩn cho video YouTube */
+}
+@media (max-width: 768px) {
+    .food-item {
+        width: 100%; /* Đầy đủ chiều rộng màn hình */
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="navbar-menu">
+    <!-- Navbar top section with logo and language selector -->
+    <!-- Menu dưới navbar -->
+  
+        <a href="indexnhap.html">Trang Chủ</a>
+        <a href="nhap1.html">Món Ăn Và Công Thức</a>
+        <a href="https://www.bachhoaxanh.com/?srsltid=AfmBOooYZ9J87olkBgiGIAeDmkvbpUggEBdBZAarP3FaBay6aI_UlJph">Mua Hàng</a>
+        <a href="lienhe.html">Liên Hệ</a>
+    </div>
+<meta name="description" content="Khám phá ẩm thực Bến Tre với các món ngon, công thức đặc sản, và hướng dẫn chi tiết.">
+
+    <!-- Phần chính -->
+    <div class="main-content">
+        <!-- Nội dung chính phần trái -->
+        <div class="left-section">
+            <h1>Bến Tre</h1>
+            <p>Bến Tre là một tỉnh nằm ở miền Tây Nam Bộ của Việt Nam, nổi bật với vẻ đẹp của thiên nhiên, văn hóa và con người. Tỉnh này nổi tiếng với những vườn dừa bạt ngàn, những con sông xanh mát, và sự kết hợp hài hòa giữa thiên nhiên và con người. Bến Tre có nhiều đặc sản, di sản văn hóa và các hoạt động du lịch hấp dẫn, thu hút du khách trong và ngoài nước.</p>
+        </div>
+        <!-- Video phần phải -->
+        <div class="right-section">
+           <iframe  src="https://www.youtube.com/embed/Xh6xQhavyiU?si=-wRZJX_YjL2nBV4q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+               <!-- Main content -->
+    <div class="container">
+        <h1> Các Món Ăn Ngon Bến Tre </h1>
+        <div class="food-list" id="food-list">
+            <div class="food-item" data-name="Kẹo Dừa Bến Tre">
+                <div class="food-name">Kẹo Dừa Bến Tre</div>
+                <img src="images/keodua1.jpg" alt="Kẹo Dừa Bến Tre">
+            </div>
+            <div class="food-item" data-name="Bánh Canh Bột Sắt">
+                <div class="food-name">Chuối Đập</div>
+                <img src="images/chuoidap.jpg" alt="Đuông Dừa Chiên Giòn">
+            </div>       
+            <div class="food-item" data-name="Cơm Dừa">
+                <div class="food-name">Cơm Dừa</div>
+                <img src="images/comdua1.jpg" alt="Kẹo Dừa Bến Tre">
+            </div>
+            <div class="food-item" data-name="Bánh Xèo Ốc Gạo">
+                <div class="food-name">Bánh Xèo Ốc Gạo</div>
+                <img src="images/banhxeoocgao1.jpg" alt="Cháo Dừa Bến Tre">
+            </div>
+            <div class="food-item" data-name="Gỏi Củ Hủ Dừa">
+                <div class="food-name">Gỏi Củ Hủ Dừa</div>
+                <img src="images/goicuhudua1.jpg" alt="Cháo Dừa Bến Tre">
+            </div>
+            <div class="food-item" data-name="Gỏi Cuốn Tôm Thịt">
+                <div class="food-name">Cá Bống Kho Nước Dừa</div>
+                <img src="images/cabong1.jpg" alt="Cá Bống Kho Nước Dừa">
+            </div>
+            <div class="food-item" data-name="Cá Lóc Nướng">
+                <div class="food-name">Cá Lóc Nướng</div>
+                <img src="images/calocnuong1.jpg" alt="Bánh Xèo Ốc Gạo">
+            </div>
+            <div class="food-item" data-name="Bánh Canh Bột Sắt">
+                <div class="food-name">Bánh Canh Bột Sắt</div>
+                <img src="images/banhcanhbotsat1.jpg" alt="Đuông Dừa Chiên Giòn">
+            </div>
+             <div class="food-item" data-name="Bánh Canh Bột Sắt">
+                <div class="food-name">Canh Chua Cá Linh Bông So Đũa</div>
+                <img src="images/canhchua.jpg" alt="Đuông Dừa Chiên Giòn">
+            </div>
+                 
+        </div>
+    </div>
+
+        
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        
+       
+        <!-- Theo dõi chúng tôi trên section with icons -->
+<div class="footer-section">
+    <h3>Theo dõi chúng tôi trên</h3>
+    <ul>
+        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        <li><a href=""><i class="fab fa-tiktok"></i></a></li>
+        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+        <li><a href=""><i class="fab fa-telegram"></i></a></li>
+    </ul>
+</div>
+    <div class="footer-container">
+        <!-- Các phần khác của footer -->
+
+        <div class="footer-section">
+            <h3>Đối tác thanh toán</h3>
+            <div class="payment-partners">
+                <img src="images/mb.jpg" alt="MB">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+                <img src="images/agri.jpg" alt="Agribank">
+                <img src="images/momo.jpg" alt="MoMo">
+                <img src="images/viet.jpg" alt="Vietcombank">
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<script>
+    function changeLanguage(event) {
+        const language = event.target.value;
+        if (language === 'en') {
+            alert('You selected English');
+            // You can add logic to switch content language based on the selected language here
+        } else {
+            alert('Bạn đã chọn Tiếng Việt');
+            // Similarly, add logic for Vietnamese content
+        }
+    }
+    import React, { useState, useEffect } from "react";
+import jwt_decode from "jwt-decode";
+
+const LoginPage = () => {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState("");
+  const [isPhoneSignUp, setIsPhoneSignUp] = useState(false);
+  const [savedAccount, setSavedAccount] = useState(null);
+
+  // Handle Google Sign-In
+  const handleGoogleLogin = (response) => {
+    const userObject = jwt_decode(response.credential);
+    console.log("Google User: ", userObject);
+    alert(Welcome, ${userObject.name});
+    localStorage.setItem("savedAccount", JSON.stringify(userObject)); // Save account to localStorage
+    setSavedAccount(userObject);
+  };
+
+  // Load Google Sign-In script
+  useEffect(() => {
+    const initializeGoogleSignIn = () => {
+      window.google.accounts.id.initialize({
+        client_id: "YOUR_GOOGLE_CLIENT_ID",
+        callback: handleGoogleLogin,
+      });
+      window.google.accounts.id.renderButton(document.getElementById("googleSignIn"), {
+        theme: "outline",
+        size: "large",
+      });
+    };
+
+    const script = document.createElement("script");
+    script.src = "https://accounts.google.com/gsi/client";
+    script.async = true;
+    script.onload = initializeGoogleSignIn;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  // Check for saved account on load
+  useEffect(() => {
+    const account = localStorage.getItem("savedAccount");
+    if (account) {
+      setSavedAccount(JSON.parse(account));
+    }
+  }, []);
+
+  // Handle Phone Number OTP Flow
+  const handleSendOtp = () => {
+    if (!phoneNumber) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+    console.log("Sending OTP to: ", phoneNumber);
+    setOtpSent(true);
+    alert("OTP has been sent to your phone number.");
+  };
+
+  const handleVerifyOtp = () => {
+    if (otp === "123456") { // Simulated OTP verification
+      alert("Phone number verified successfully!");
+    } else {
+      alert("Invalid OTP. Please try again.");
+    }
+  };        function searchFood() {
+            let searchInput = document.getElementById('search').value.toLowerCase();
+            let foodItems = document.querySelectorAll('.food-item');
+            
+            foodItems.forEach(item => {
+                let foodName = item.getAttribute('data-name').toLowerCase();
+                if (foodName.includes(searchInput)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleLoginForm() {
+            let loginForm = document.getElementById('login-form');
+            loginForm.style.display = loginForm.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function login() {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            if (email && password) {
+                alert('Đăng nhập thành công!');
+                toggleLoginForm(); // Close the login form
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        }
+  return (
+    function searchFood() {
+    let searchInput = document.getElementById('search').value.toLowerCase(); // Lấy giá trị từ thanh tìm kiếm và chuyển thành chữ thường
+    let foodItems = document.querySelectorAll('.food-item'); // Lấy tất cả các phần tử món ăn
+    
+    foodItems.forEach(item => {
+        let foodName = item.getAttribute('data-name').toLowerCase(); // Lấy tên món ăn từ thuộc tính data-name và chuyển thành chữ thường
+        if (foodName.includes(searchInput)) { // Kiểm tra nếu tên món ăn chứa văn bản tìm kiếm
+            item.style.display = 'block'; // Hiển thị món ăn nếu trùng với tìm kiếm
+        } else {
+            item.style.display = 'none'; // Ẩn món ăn nếu không trùng
+        }
+    });
+}
+function changeLanguage(event) {
+    const language = event.target.value;
+    if (language === 'en') {
+        // Translate all content into English (mock example)
+        document.querySelector('h1').innerText = 'Delicious Dishes of Ben Tre';
+    } else {
+        // Translate back to Vietnamese
+        document.querySelector('h1').innerText = 'Các Món Ăn Ngon Bến Tre';
+    }
+}
+
+
+
+</script>
+</body>
+</html>
